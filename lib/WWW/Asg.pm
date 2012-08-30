@@ -14,20 +14,49 @@ use DateTime::Format::Strptime;
 
 #use Smart::Comments;
 
-our $VERSION = '0.01';
+=head1 NAME
 
-my $strp = DateTime::Format::Strptime->new( 
-    pattern => '%Y.%m.%d %H:%M',
+WWW::Asg - Get video informations from Asg.to 
+
+=head1 VERSION
+
+Version 0.02
+
+=cut
+
+our $VERSION = '0.02';
+
+=head1 SYNOPSIS
+
+    use WWW::Asg;
+
+    my $asg = WWW::Asg->new();
+    my @videos = $asg->latest_videos($page);
+    foreach my $v ( @videos ) {
+        my $filepath = "/tmp/$v->{mcd}.flv";
+        $asg->download_flv($v->{mcd}, $filepath);
+    }
+
+=cut
+
+my $strp = DateTime::Format::Strptime->new(
+    pattern   => '%Y.%m.%d %H:%M',
     locale    => 'ja_JP',
-    time_zone => 'Asia/Tokyo', 
+    time_zone => 'Asia/Tokyo',
 );
 my %default_condition = (
-    q => '',
-    searchVideo => 'true',
-    minimumLength => '',
+    q              => '',
+    searchVideo    => 'true',
+    minimumLength  => '',
     searchCategory => 'any',
-    sort => 'date',
+    sort           => 'date',
 );
+
+=head1 SUBROUTINES/METHODS
+
+=head2 new 
+
+=cut
 
 sub new {
     my ( $class, %opt ) = @_;
@@ -38,17 +67,25 @@ sub new {
     $self;
 }
 
+=head2 search 
+
+=cut
+
 sub search {
     my ( $self, %condition ) = @_;
     %condition = ( %default_condition, %condition );
-    
+
     my $uri = URI->new('http://asg.to/search');
-    $uri->query_form(\%condition);
+    $uri->query_form( \%condition );
     my $res = $self->{ua}->get( $uri->as_string );
     return () unless $res->is_success;
 
     $self->_extract_videos( $res->decoded_content );
 }
+
+=head2 latest_videos 
+
+=cut
 
 sub latest_videos {
     my ( $self, $page ) = @_;
@@ -58,6 +95,10 @@ sub latest_videos {
 
     $self->_extract_videos( $res->decoded_content );
 }
+
+=head2 download_flv 
+
+=cut
 
 sub download_flv {
     my ( $self, $mcd, $filepath, $cb ) = @_;
@@ -161,7 +202,7 @@ sub _extract_video {
     if ( $ccd =~ /(http:\/\/asg\.to)?\/categoryPage\.html\?ccd=([^?&]+)/ ) {
         $video->{ccd} = $2;
     }
-    $video->{ccd_text} = $self->_trim($ccd_node->findvalue('.'));
+    $video->{ccd_text} = $self->_trim( $ccd_node->findvalue('.') );
 
     # play time
     my $play_time = $list_info_nodes->[2]->findvalue('.');
@@ -206,11 +247,14 @@ sub _date {
     $self->_trim($date_str);
 
     my $dt = undef;
-    if ( $date_str =~ /.*([0-9]{2,4}\.[0-9]{2}\.[0-9]{2} [0-9]{2}:[0-9]{2}).*/ ) {
+    if ( $date_str =~ /.*([0-9]{2,4}\.[0-9]{2}\.[0-9]{2} [0-9]{2}:[0-9]{2}).*/ )
+    {
         my $date = "20" . $1;
         $dt = $strp->parse_datetime($date);
     }
-    elsif ( $date_str =~ /.*([0-9]{4}\-[0-9]{2}\-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2}Z)?).*/ ){
+    elsif ( $date_str =~
+        /.*([0-9]{4}\-[0-9]{2}\-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2}Z)?).*/ )
+    {
         my $date = $1;
         $dt = DateTime::Format::ISO8601->new->parse_datetime($date);
     }
@@ -218,41 +262,64 @@ sub _date {
         return undef;
     }
 
-    return $dt->iso8601; 
+    return $dt->iso8601;
 }
 
 sub _trim {
-    my ($self, $str) = @_;
+    my ( $self, $str ) = @_;
     $str =~ s/^[\s　]*(.*?)[\s　]*$/$1/ if $str;
     return $str;
 }
-
-1;
-
-__END__
-
-=head1 NAME
-
-WWW::Asg - Get video informations from Asg.to 
-
-=head1 SYNOPSIS
-
-    use WWW::Asg;
-
-    my $asg = WWW::Asg->new();
-    my @videos = $asg->latest_videos($page);
-    foreach my $v ( @videos ) {
-        my $filepath = "/tmp/$v->{mcd}.flv";
-        $asg->download_flv($v->{mcd}, $filepath);
-    }
 
 =head1 AUTHOR
 
 Tatsuya Fukata C<< <tatsuya.fukata@gmail.com> >>
 
-=head1 LICENCE AND COPYRIGHT
+=head1 BUGS
 
-This module is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself. See L<perlartistic>.
+Please report any bugs or feature requests to C<bug-www-asg at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Asg>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc WWW::Asg
+
+You can also look for information at:
+
+=over 4
+
+=item * RT: CPAN's request tracker (report bugs here)
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=WWW-Asg>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/WWW-Asg>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/WWW-Asg>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/WWW-Asg/>
+
+=back
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2012 Tatsuya FUKATA.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
 
 =cut
+
+1;    # End of WWW::Asg
