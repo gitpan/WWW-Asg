@@ -25,7 +25,8 @@ my $expect_search_videos = [
         thumbnail =>
 'http://smedia20.asg.to/t/20120830/1346294104_809067_335576.flv/200x148/12',
         title => '性欲盛んな巨乳美女をホテルでハメ',
-        url   => 'http://asg.to/contentsPage.html?mcd=t8DWA8Lx9tn7M5vf'
+        url   => 'http://asg.to/contentsPage.html?mcd=t8DWA8Lx9tn7M5vf',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=t8DWA8Lx9tn7M5vf", 450, 372);</script>',
     },
     {
         ccd         => 'kyonyu',
@@ -36,7 +37,8 @@ my $expect_search_videos = [
         thumbnail   => '',
         title       => '貧乳オッパイ画像',
         url =>
-'http://asg.tohttp://pix.asg.to/contentsPage.html?mcd=SoZWbkLaESa68ivtUs4OksbnrXLsXCKq'
+'http://asg.tohttp://pix.asg.to/contentsPage.html?mcd=SoZWbkLaESa68ivtUs4OksbnrXLsXCKq',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=SoZWbkLaESa68ivtUs4OksbnrXLsXCKq", 450, 372);</script>',
     },
     {
         ccd            => 'kyonyu',
@@ -49,7 +51,8 @@ my $expect_search_videos = [
         thumbnail =>
 'http://smedia21.asg.to/t/20120830/1346289686_841918_335573.flv/200x148/12',
         title => 'むちむちプリン',
-        url   => 'http://asg.to/contentsPage.html?mcd=kUfU9VhkBFE5qkzi'
+        url   => 'http://asg.to/contentsPage.html?mcd=kUfU9VhkBFE5qkzi',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=kUfU9VhkBFE5qkzi", 450, 372);</script>',
     },
     {
         ccd      => 'kyonyu',
@@ -64,7 +67,8 @@ my $expect_search_videos = [
 'http://smedia14.asg.to/t/20120830/1346288398_629200_335572.flv/200x148/12',
         title =>
 '女の子と二人っきりになる為、お手伝いさんを雇ってみたら胸の谷間が',
-        url => 'http://asg.to/contentsPage.html?mcd=SmOLYTyDa4D96GXG'
+        url => 'http://asg.to/contentsPage.html?mcd=SmOLYTyDa4D96GXG',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=SmOLYTyDa4D96GXG", 450, 372);</script>',
     },
     {
         ccd      => 'bisyojo',
@@ -79,7 +83,8 @@ my $expect_search_videos = [
 'http://smedia17.asg.to/t/20120830/1346268986_30925_333962.flv/200x148/12',
         title =>
 '女性のセックス願望が一目でわかる‘性欲まるわかりバッジ’(1)',
-        url => 'http://asg.to/contentsPage.html?mcd=uQLVN5ZriuIHOfas'
+        url => 'http://asg.to/contentsPage.html?mcd=uQLVN5ZriuIHOfas',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=uQLVN5ZriuIHOfas", 450, 372);</script>',
     },
     {
         ccd      => 'bisyojo',
@@ -94,7 +99,8 @@ my $expect_search_videos = [
 'http://smedia25.asg.to/t/20120830/1346268353_294013_334148.flv/200x148/12',
         title =>
 '女性のセックス願望が一目でわかる‘性欲まるわかりバッジ’(2)',
-        url => 'http://asg.to/contentsPage.html?mcd=kL6murai1mUmz0ek'
+        url => 'http://asg.to/contentsPage.html?mcd=kL6murai1mUmz0ek',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=kL6murai1mUmz0ek", 450, 372);</script>',
     },
     {
         ccd      => 'kyonyu',
@@ -108,7 +114,8 @@ my $expect_search_videos = [
         thumbnail =>
 'http://smedia18.asg.to/t/20120829/1346244001_812454_335560.flv/200x148/12',
         title => 'クラスメイトの優しいお姉さんと童貞喪失SEX',
-        url   => 'http://asg.to/contentsPage.html?mcd=yw4cY7knY73IAc7c'
+        url   => 'http://asg.to/contentsPage.html?mcd=yw4cY7knY73IAc7c',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=yw4cY7knY73IAc7c", 450, 372);</script>',
     },
     {
         ccd      => 'kyonyu',
@@ -122,7 +129,8 @@ my $expect_search_videos = [
         thumbnail =>
 'http://smedia17.asg.to/t/20120829/1346243401_362555_335559.flv/200x148/12',
         title => '【新着】マット上で3Pローションプレイ',
-        url   => 'http://asg.to/contentsPage.html?mcd=7sFMAO2onhzMTDgp'
+        url   => 'http://asg.to/contentsPage.html?mcd=7sFMAO2onhzMTDgp',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=7sFMAO2onhzMTDgp", 450, 372);</script>',
     },
     {
         ccd      => 'kyonyu',
@@ -136,7 +144,8 @@ my $expect_search_videos = [
         thumbnail =>
 'http://smedia25.asg.to/t/20120829/1346231384_29723_335556.flv/200x148/12',
         title => 'あの有名女優が・・・',
-        url   => 'http://asg.to/contentsPage.html?mcd=JEiFuKV731hPFdV2'
+        url   => 'http://asg.to/contentsPage.html?mcd=JEiFuKV731hPFdV2',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=JEiFuKV731hPFdV2", 450, 372);</script>',
     },
     {
         ccd      => 'kyonyu',
@@ -150,7 +159,8 @@ my $expect_search_videos = [
         thumbnail =>
 'http://smedia23.asg.to/t/20120829/1346231292_181679_335555.flv/200x148/12',
         title => 'あの有名女優が・・・',
-        url   => 'http://asg.to/contentsPage.html?mcd=ElpI1i60dHivhppW'
+        url   => 'http://asg.to/contentsPage.html?mcd=ElpI1i60dHivhppW',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=ElpI1i60dHivhppW", 450, 372);</script>',
     }
 ];
 

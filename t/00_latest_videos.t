@@ -23,7 +23,8 @@ my $expect_latest_videos = [
 'http://smedia11.asg.to/t/20120830/1346289729_266132_335574.flv/200x148/12',
         title =>
 '世界一のチ●ポに薬漬けされて白目むくまでガン突きFUCK！！！／まりか',
-        url => 'http://asg.to/contentsPage.html?mcd=4zAA8rPeInyUQrds'
+        url => 'http://asg.to/contentsPage.html?mcd=4zAA8rPeInyUQrds',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=4zAA8rPeInyUQrds", 450, 372);</script>',
     },
     {
         ccd            => 'kyonyu',
@@ -36,7 +37,8 @@ my $expect_latest_videos = [
         thumbnail =>
 'http://smedia21.asg.to/t/20120830/1346289686_841918_335573.flv/200x148/12',
         title => 'むちむちプリン',
-        url   => 'http://asg.to/contentsPage.html?mcd=kUfU9VhkBFE5qkzi'
+        url   => 'http://asg.to/contentsPage.html?mcd=kUfU9VhkBFE5qkzi',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=kUfU9VhkBFE5qkzi", 450, 372);</script>',
     },
     {
         ccd            => 'kyonyu',
@@ -50,7 +52,8 @@ my $expect_latest_videos = [
 'http://smedia14.asg.to/t/20120830/1346288398_629200_335572.flv/200x148/12',
         title =>
 '女の子と二人っきりになる為、お手伝いさんを雇ってみたら胸の谷間が',
-        url => 'http://asg.to/contentsPage.html?mcd=SmOLYTyDa4D96GXG'
+        url => 'http://asg.to/contentsPage.html?mcd=SmOLYTyDa4D96GXG',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=SmOLYTyDa4D96GXG", 450, 372);</script>',
     },
     {
         ccd            => 'shirouto',
@@ -64,7 +67,8 @@ my $expect_latest_videos = [
 'http://smedia11.asg.to/t/20120830/1346270297_65857_334085.flv/200x148/12',
         title =>
 '現役女子大生 〜新体操でインカレを目指しているKちゃん〜(1)',
-        url => 'http://asg.to/contentsPage.html?mcd=EP8VvYtt0QhlL3SR'
+        url => 'http://asg.to/contentsPage.html?mcd=EP8VvYtt0QhlL3SR',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=EP8VvYtt0QhlL3SR", 450, 372);</script>',
     },
     {
         ccd            => 'shirouto',
@@ -77,7 +81,8 @@ my $expect_latest_videos = [
         thumbnail =>
 'http://smedia25.asg.to/t/20120830/1346270301_479522_334086.flv/200x148/12',
         title => 'あなたより綺麗な人、紹介してください。(1)',
-        url   => 'http://asg.to/contentsPage.html?mcd=MHPqky93lVQwTDo5'
+        url   => 'http://asg.to/contentsPage.html?mcd=MHPqky93lVQwTDo5',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=MHPqky93lVQwTDo5", 450, 372);</script>',
     },
     {
         ccd            => 'shirouto',
@@ -91,7 +96,8 @@ my $expect_latest_videos = [
 'http://smedia18.asg.to/t/20120830/1346269581_494292_334271.flv/200x148/12',
         title =>
 '現役女子大生 〜新体操でインカレを目指しているKちゃん〜(2)',
-        url => 'http://asg.to/contentsPage.html?mcd=CbxJb2Asj6Dgh2Jh'
+        url => 'http://asg.to/contentsPage.html?mcd=CbxJb2Asj6Dgh2Jh',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=CbxJb2Asj6Dgh2Jh", 450, 372);</script>',
     },
     {
         ccd            => 'shirouto',
@@ -104,7 +110,8 @@ my $expect_latest_videos = [
         thumbnail =>
 'http://smedia25.asg.to/t/20120830/1346269659_219981_334272.flv/200x148/12',
         title => 'あなたより綺麗な人、紹介してください。(2)',
-        url   => 'http://asg.to/contentsPage.html?mcd=A9BSUXAQfhCOqEJ1'
+        url   => 'http://asg.to/contentsPage.html?mcd=A9BSUXAQfhCOqEJ1',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=A9BSUXAQfhCOqEJ1", 450, 372);</script>',
     },
     {
         ccd            => 'bisyojo',
@@ -118,7 +125,8 @@ my $expect_latest_videos = [
 'http://smedia17.asg.to/t/20120830/1346268986_30925_333962.flv/200x148/12',
         title =>
 '女性のセックス願望が一目でわかる‘性欲まるわかりバッジ’(1)',
-        url => 'http://asg.to/contentsPage.html?mcd=uQLVN5ZriuIHOfas'
+        url => 'http://asg.to/contentsPage.html?mcd=uQLVN5ZriuIHOfas',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=uQLVN5ZriuIHOfas", 450, 372);</script>',
     },
     {
         ccd            => 'seihuku',
@@ -131,7 +139,8 @@ my $expect_latest_videos = [
         thumbnail =>
 'http://smedia11.asg.to/t/20120830/1346268905_750477_333961.flv/200x148/12',
         title => 'おしゃぶり生徒会長 周防ゆきこ(1)',
-        url   => 'http://asg.to/contentsPage.html?mcd=RCOaqyVtYEfuQvgV'
+        url   => 'http://asg.to/contentsPage.html?mcd=RCOaqyVtYEfuQvgV',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=RCOaqyVtYEfuQvgV", 450, 372);</script>',
     },
     {
         ccd            => 'bisyojo',
@@ -145,7 +154,8 @@ my $expect_latest_videos = [
 'http://smedia25.asg.to/t/20120830/1346268353_294013_334148.flv/200x148/12',
         title =>
 '女性のセックス願望が一目でわかる‘性欲まるわかりバッジ’(2)',
-        url => 'http://asg.to/contentsPage.html?mcd=kL6murai1mUmz0ek'
+        url => 'http://asg.to/contentsPage.html?mcd=kL6murai1mUmz0ek',
+        embed => '<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=kL6murai1mUmz0ek", 450, 372);</script>',
     }
 ];
 

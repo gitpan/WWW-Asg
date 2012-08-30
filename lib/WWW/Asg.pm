@@ -20,11 +20,11 @@ WWW::Asg - Get video informations from Asg.to
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -51,6 +51,8 @@ my %default_condition = (
     searchCategory => 'any',
     sort           => 'date',
 );
+my $embed_code_format =
+'<script type="text/javascript" src="http://asg.to/js/past_uraui.js"></script><script type="text/javascript">Purauifla("mcd=%s", 450, 372);</script>';
 
 =head1 SUBROUTINES/METHODS
 
@@ -213,6 +215,9 @@ sub _extract_video {
         $video->{play_time}      = $play_time_sec;
         $video->{play_time_text} = $self->_trim($play_time_text);
     }
+
+    # embed code
+    $video->{embed} = sprintf( $embed_code_format, $video->{mcd} );
 
 ### $video
     return $video;

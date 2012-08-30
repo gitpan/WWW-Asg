@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW-Asg.
 
+0.03  Thu Aug 30 21:27:34 JST 2012
+    - add embed 
+
 0.02  Thu Aug 30 19:14:38 JST 2012
     - make dist 
 
