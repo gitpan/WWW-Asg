@@ -20,11 +20,11 @@ WWW::Asg - Get video informations from Asg.to
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -34,7 +34,7 @@ our $VERSION = '0.03';
     my @videos = $asg->latest_videos($page);
     foreach my $v ( @videos ) {
         my $filepath = "/tmp/$v->{mcd}.flv";
-        $asg->download_flv($v->{mcd}, $filepath);
+        $asg->download_flv($v->{mcd}, ( ":content_file" => $filepath ));
     }
 
 =cut
@@ -57,7 +57,7 @@ my $embed_code_format =
 =head1 SUBROUTINES/METHODS
 
 =head2 new 
-
+    Constructor
 =cut
 
 sub new {
@@ -69,8 +69,8 @@ sub new {
     $self;
 }
 
-=head2 search 
-
+=head2 search(%condition) 
+    Get search videos
 =cut
 
 sub search {
@@ -85,8 +85,8 @@ sub search {
     $self->_extract_videos( $res->decoded_content );
 }
 
-=head2 latest_videos 
-
+=head2 latest_videos($page) 
+    Get latest videos
 =cut
 
 sub latest_videos {
@@ -98,17 +98,17 @@ sub latest_videos {
     $self->_extract_videos( $res->decoded_content );
 }
 
-=head2 download_flv 
-
+=head2 download_flv($mcd, %opt) 
+    Download flv file
 =cut
 
 sub download_flv {
-    my ( $self, $mcd, $filepath, $cb ) = @_;
+    my ( $self, $mcd, %opt ) = @_;
 ### $mcd
-### $filepath
+### %opt
 
-    if ( not $mcd or not $filepath ) {
-        croak "mcd and filepath is required.";
+    if ( not $mcd or not %opt ) {
+        croak "mcd and opt is required.";
     }
 
     my $res = $self->{ua}->get("http://asg.to/contentsPage.html?mcd=$mcd");
@@ -131,18 +131,12 @@ sub download_flv {
     my $url = $self->_movieurl( $xml_res->decoded_content );
     croak "Can't find movieurl in xml." unless $url;
 
-    eval {
-        my %options = ( ":content_file" => $filepath );
-        if ($cb) {
-            $options{":content_cb"} = $cb;
-        }
-        $self->{ua}->get( $url, %options );
-    };
+    eval { $self->{ua}->get( $url, %opt ); };
     if ($@) {
         croak "Failed downlaod. mcd: $mcd";
     }
 
-    return $filepath;
+    return 1;
 }
 
 sub _extract_videos {
