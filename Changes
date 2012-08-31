@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW-Asg.
 
+0.05  Fri Aug 31 13:52:25 JST 2012 
+    - remove download_flv 
+
 0.04  Thu Aug 30 23:24:53 JST 2012 
     - bug fixed 
 

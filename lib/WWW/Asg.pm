@@ -20,11 +20,11 @@ WWW::Asg - Get video informations from Asg.to
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 SYNOPSIS
 
@@ -33,8 +33,7 @@ our $VERSION = '0.04';
     my $asg = WWW::Asg->new();
     my @videos = $asg->latest_videos($page);
     foreach my $v ( @videos ) {
-        my $filepath = "/tmp/$v->{mcd}.flv";
-        $asg->download_flv($v->{mcd}, ( ":content_file" => $filepath ));
+        print $asg->{embed} . "\n";
     }
 
 =cut
@@ -57,7 +56,6 @@ my $embed_code_format =
 =head1 SUBROUTINES/METHODS
 
 =head2 new 
-    Constructor
 =cut
 
 sub new {
@@ -70,7 +68,6 @@ sub new {
 }
 
 =head2 search(%condition) 
-    Get search videos
 =cut
 
 sub search {
@@ -86,7 +83,6 @@ sub search {
 }
 
 =head2 latest_videos($page) 
-    Get latest videos
 =cut
 
 sub latest_videos {
@@ -96,47 +92,6 @@ sub latest_videos {
     return () unless $res->is_success;
 
     $self->_extract_videos( $res->decoded_content );
-}
-
-=head2 download_flv($mcd, %opt) 
-    Download flv file
-=cut
-
-sub download_flv {
-    my ( $self, $mcd, %opt ) = @_;
-### $mcd
-### %opt
-
-    if ( not $mcd or not %opt ) {
-        croak "mcd and opt is required.";
-    }
-
-    my $res = $self->{ua}->get("http://asg.to/contentsPage.html?mcd=$mcd");
-    croak "Can't get contentsPage html." unless $res->is_success;
-
-    my $html = $res->decoded_content;
-
-    my $pt = $self->_pt($html);
-    croak "Can't not scrape pt." unless $pt;
-
-    my $st = $self->_st( $mcd, $pt );
-    croak "Can't not scrape st." unless $st;
-
-### $pt
-### $st
-    my $xml_res =
-      $self->{ua}->get("http://asg.to/contentsPage.xml?mcd=$mcd&pt=$pt&st=$st");
-    croak "Can't get contentsPage xml." unless $xml_res->is_success;
-
-    my $url = $self->_movieurl( $xml_res->decoded_content );
-    croak "Can't find movieurl in xml." unless $url;
-
-    eval { $self->{ua}->get( $url, %opt ); };
-    if ($@) {
-        croak "Failed downlaod. mcd: $mcd";
-    }
-
-    return 1;
 }
 
 sub _extract_videos {
@@ -215,30 +170,6 @@ sub _extract_video {
 
 ### $video
     return $video;
-}
-
-sub _pt {
-    my ( $self, $html ) = @_;
-    return undef unless $html =~ m/.*urauifla\(\s*("|')([^\)]+?)("|')\).*/s;
-    return undef unless $2    =~ /.*&pt=([^&]+).*/;
-    return $1;
-}
-
-sub _st {
-    my ( $self, $mcd, $pt ) = @_;
-    my $d = "---===XERrr3nmsdf8874nca===---";
-    my $seed = $d . $mcd . substr( $pt, 0, 8 );
-    return md5_hex($seed);
-}
-
-sub _movieurl {
-    my ( $self, $xml ) = @_;
-    if ( $xml =~ m/.*<movieurl>(.+?)<\/movieurl>.*/s ) {
-        return $1;
-    }
-    else {
-        return undef;
-    }
 }
 
 sub _date {
